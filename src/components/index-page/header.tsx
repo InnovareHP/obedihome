@@ -94,8 +94,8 @@ export default function OptimizedHeader() {
                 whileHover={{ rotate: 5 }}
                 transition={{ duration: 0.2 }}
               />
-              <span className="text-lg font-bold sm:block hidden">
-                Obedi Home
+              <span className="text-lg font-bold font-fredoka tracking-widest sm:block hidden">
+                OBEDI HOME
               </span>
             </motion.a>
 

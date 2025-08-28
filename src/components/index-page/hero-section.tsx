@@ -34,7 +34,7 @@ export default function ImprovedHeroSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-5xl sm:text-7xl font-bold text-white leading-tight"
+                className="text-5xl font-bold uppercase font-fredoka tracking-widest text-white"
               >
                 OBEDI HOME
               </motion.h1>

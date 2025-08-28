@@ -18,7 +18,10 @@ export default function AboutUsSection() {
           viewport={{ once: true }}
           className="relative z-10 max-w-xl text-4xl font-medium text-yellow-900 lg:text-5xl"
         >
-          AT <strong className="font-bold">OBEDI HOMES</strong>
+          AT{" "}
+          <strong className="font-bold font-fredoka tracking-widest">
+            OBEDI HOME
+          </strong>
         </motion.h2>
 
         <div className="relative">
@@ -31,7 +34,7 @@ export default function AboutUsSection() {
             className="relative z-30 space-y-4 md:w-1/2"
           >
             <p className="text-yellow-700 text-lg">
-              We believe every <strong>male resident</strong> deserves dignity,
+              We believe every <strong> resident</strong> deserves dignity,
               safety, and compassion.{" "}
               <span className="font-medium">
                 Our name, symbolized by the light of a lamp, represents
@@ -41,7 +44,7 @@ export default function AboutUsSection() {
             </p>
 
             <p className="text-yellow-700">
-              Founded to create a safe, structured home for males with
+              Founded to create a safe, structured home for residents with
               behavioral health needs, Obedi Home focuses on:
             </p>
 
