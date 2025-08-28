@@ -10,7 +10,7 @@ export default function Faqs() {
   const faqs = [
     {
       q: "Who can live at Obedi Home?",
-      a: "All-male residents 18 years old and above with behavioral health needs requiring support with daily living, hygiene, medication, and structured routines.",
+      a: "Residents 18 years old and above with behavioral health needs requiring support with daily living, hygiene, medication, and structured routines.",
     },
     {
       q: "Why is Obedi Home an all-male facility?",
