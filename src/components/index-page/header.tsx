@@ -14,7 +14,7 @@ export default function OptimizedHeader() {
   const navigationItems = [
     ["Home", "#home"],
     ["Services", "#services"],
-    ["Life at Obedi", "#life"],
+    ["Life at OBEDI", "#life"],
     ["Approach", "#approach"],
     ["About", "#about"],
     ["Mission & Vision", "#mission"],

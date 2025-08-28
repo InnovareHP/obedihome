@@ -42,7 +42,7 @@ const lifeAspects = [
     description: "Nutritious meals prepared fresh daily",
     detail:
       "Our kitchen staff prepare nutritious, balanced meals daily with dietary accommodations and preferences considered.",
-    image: `${IMAGES_BASE}/${privateRoomFiles[8]}`,
+    image: `${IMAGES_BASE}/${privateRoomFiles[10]}`,
     highlights: [
       "Fresh daily meals",
       "Dietary accommodations",
@@ -70,7 +70,7 @@ const lifeAspects = [
     description: "Outings and social opportunities",
     detail:
       "Regular community outings and social activities help residents build connections and practice social skills in real-world settings.",
-    image: `${IMAGES_BASE}/${privateRoomFiles[5]}`,
+    image: `${IMAGES_BASE}/${privateRoomFiles[9]}`,
     highlights: [
       "Community outings",
       "Social connections",
@@ -158,7 +158,10 @@ export default function LifeAtObediCarouselSection() {
           className="text-center mb-12"
         >
           <h2 className="text-4xl font-bold text-yellow-900 mb-4">
-            Life at Obedi Home
+            Life at{" "}
+            <span className="font-fredoka tracking-widest text-yellow-900">
+              OBEDI HOME
+            </span>
           </h2>
           <p className="text-lg text-yellow-700 max-w-2xl mx-auto">
             Living at Obedi Home means being part of a supportive male community
@@ -279,16 +282,23 @@ export default function LifeAtObediCarouselSection() {
         </div>
       </div>
 
-      {/* Gallery Modal (previews only IMG_ photos) */}
       <Dialog open={isGalleryOpen} onOpenChange={setIsGalleryOpen}>
-        <DialogContent className="w-full max-w-5xl max-h-[90vh] p-4 sm:p-6">
-          <DialogHeader>
+        <DialogContent
+          className={[
+            // Full viewport on mobile
+            "w-[100vw] max-w-none h-[100dvh] p-0 rounded-none",
+            // Constrain on >= sm
+            "sm:w-full sm:max-w-5xl sm:h-auto sm:max-h-[90vh] sm:p-6 sm:rounded-xl",
+          ].join(" ")}
+        >
+          <DialogHeader className="px-4 pt-4 sm:px-0 sm:pt-0">
             <DialogTitle>Obedi Home Gallery</DialogTitle>
           </DialogHeader>
 
-          <div className="relative">
+          <div className="relative px-4 pb-4 sm:px-0 sm:pb-0">
             {/* Big image area */}
-            <div className="relative w-full h-[60vh] overflow-hidden rounded-lg bg-black">
+            {/* Big image area */}
+            <div className="relative w-full max-h-[80vh] sm:h-[60vh] bg-black flex items-center justify-center rounded-lg overflow-hidden">
               <AnimatePresence mode="wait" initial={false}>
                 {hasGallery ? (
                   <motion.div
@@ -297,16 +307,14 @@ export default function LifeAtObediCarouselSection() {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute inset-0"
-                    style={{ willChange: "opacity" }}
+                    className="w-full h-full flex items-center justify-center"
                   >
                     <img
-                      src={currentImages[currentGalleryImage]} // e.g. /image/IMG_6037.jpg
+                      src={currentImages[currentGalleryImage]}
                       alt={`Gallery ${currentGalleryImage + 1}`}
+                      className="max-h-[80vh] w-auto max-w-full object-contain"
                       sizes="(max-width: 768px) 100vw, 960px"
-                      className="object-contain" // <-- show whole image
                       onError={(e) => {
-                        // simple fallback if a filename is wrong
                         (e.target as HTMLImageElement).style.visibility =
                           "hidden";
                       }}
@@ -326,21 +334,24 @@ export default function LifeAtObediCarouselSection() {
 
               {hasGallery && (
                 <>
+                  {/* Prev/Next */}
                   <button
                     onClick={prevGalleryImage}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-2 rounded-full"
+                    className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-white/50"
+                    aria-label="Previous image"
                   >
                     <ChevronLeft className="h-6 w-6" />
                   </button>
 
                   <button
                     onClick={nextGalleryImage}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-2 rounded-full"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-white/50"
+                    aria-label="Next image"
                   >
                     <ChevronRight className="h-6 w-6" />
                   </button>
 
-                  <div className="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
+                  <div className="absolute bottom-3 right-3 bg-black/60 text-white px-3 py-1 rounded-full text-xs sm:text-sm">
                     {currentGalleryImage + 1} / {currentImages.length}
                   </div>
                 </>
@@ -349,17 +360,25 @@ export default function LifeAtObediCarouselSection() {
 
             {/* Thumbnails */}
             {hasGallery && (
-              <div className="flex space-x-2 mt-4 overflow-x-auto pb-2 [content-visibility:auto]">
+              <div
+                className={[
+                  "flex space-x-2 mt-3 sm:mt-4 overflow-x-auto pb-2 [content-visibility:auto]",
+                  // Better touch scrolling on mobile
+                  "snap-x snap-mandatory [-webkit-overflow-scrolling:touch]",
+                ].join(" ")}
+              >
                 {currentImages.map((image, index) => (
                   <button
                     key={image}
                     onClick={() => setCurrentGalleryImage(index)}
-                    className={`flex-shrink-0 w-20 h-20 overflow-hidden rounded-lg border-2 ${
+                    className={[
+                      "flex-shrink-0 w-20 h-20 overflow-hidden rounded-lg border-2 snap-start",
                       index === currentGalleryImage
                         ? "border-yellow-500"
-                        : "border-gray-300"
-                    }`}
+                        : "border-gray-300",
+                    ].join(" ")}
                     title={image}
+                    aria-label={`Open image ${index + 1}`}
                   >
                     <img
                       src={image}
@@ -369,6 +388,7 @@ export default function LifeAtObediCarouselSection() {
                       loading="lazy"
                       decoding="async"
                       className="w-full h-full object-cover"
+                      draggable={false}
                     />
                   </button>
                 ))}

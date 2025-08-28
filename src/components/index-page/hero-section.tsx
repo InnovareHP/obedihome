@@ -58,9 +58,9 @@ export default function ImprovedHeroSection() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl"
             >
-              Welcome to Obedi Home, a residential facility providing 24/7 care
-              for individuals with behavioral health needs. We create a
-              structured, compassionate environment where residents feel safe,
+              Welcome to Obedi Home, an all-male residential facility providing
+              24/7 care for individuals with behavioral health needs. We create
+              a structured, compassionate environment where residents feel safe,
               respected, and supported in their daily lives.
             </motion.p>
 
