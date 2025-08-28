@@ -20,7 +20,6 @@ export default function OptimizedHeader() {
     ["Mission & Vision", "#mission"],
     ["Values", "#values"],
     ["FAQs", "#faqs"],
-    ["Contact", "#contact"],
   ];
 
   // Handle scroll effects
