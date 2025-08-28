@@ -152,7 +152,7 @@ export default function AboutUsSection() {
             >
               <div className="rounded-[12px] overflow-hidden shadow-md">
                 <img
-                  src="/image/about-us.jpg"
+                  src="/image/about-us.png"
                   className="w-full h-[400px] md:h-[500px] object-cover"
                   alt="Obedi Home - Safe, structured environment for behavioral health residents"
                   loading="lazy"

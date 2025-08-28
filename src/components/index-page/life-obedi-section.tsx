@@ -42,7 +42,7 @@ const lifeAspects = [
     description: "Nutritious meals prepared fresh daily",
     detail:
       "Our kitchen staff prepare nutritious, balanced meals daily with dietary accommodations and preferences considered.",
-    image: `${IMAGES_BASE}/${privateRoomFiles[10]}`,
+    image: `${IMAGES_BASE}/${privateRoomFiles[3]}`,
     highlights: [
       "Fresh daily meals",
       "Dietary accommodations",
@@ -186,8 +186,7 @@ export default function LifeAtObediCarouselSection() {
                   <img
                     src={lifeAspects[currentSlide].image}
                     alt={lifeAspects[currentSlide].title}
-                    sizes="(max-width: 1024px) 100vw, 960px"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover bg-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
