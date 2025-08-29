@@ -13,7 +13,7 @@ export default function ImprovedHeroSection() {
       className="relative min-h-screen flex items-center overflow-hidden"
     >
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[url('/banner/obedi-banner.png')] bg-cover bg-center bg-no-repeat scale-105" />
+        <div className="absolute inset-0 bg-[url('/banner/obedi-banner.jpg')] bg-cover bg-center bg-no-repeat scale-105" />
         <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/50" />
         <div className="absolute inset-0 bg-gradient-to-t from-yellow-900/20 via-transparent to-transparent" />
       </div>
