@@ -139,7 +139,7 @@ export default function AboutUsSection() {
             {/* Gradient Overlay */}
             <div
               aria-hidden="true"
-              className="absolute inset-0 hidden bg-gradient-to-r from-amber-50 via-amber-50/80 to-transparent to-75% z-20 md:block"
+              className="absolute inset-0 hidden bg-gradient-to-r from-amber-50 via-amber-50/80 to-transparent to-65% z-20 md:block"
             />
 
             {/* Image Container */}
@@ -150,16 +150,9 @@ export default function AboutUsSection() {
               viewport={{ once: true }}
               className="relative  border-yellow-200/50 border-dotted p-2 backdrop-blur-md"
             >
-              <div className="rounded-[12px] overflow-hidden sm:block hidden shadow-md">
-                <img
-                  src="/image/about-us.png"
-                  className="w-full h-[400px] md:h-[500px] object-cover"
-                  alt="Obedi Home - Safe, structured environment for behavioral health residents"
-                  loading="lazy"
-                />
-              </div>
 
-              <div className="rounded-[12px] overflow-hidden sm:hidden block shadow-md">
+
+              <div className="rounded-[12px] overflow-hidden shadow-md">
                 <img
                   src="/image/obedi-image-2.png"
                   className="w-full h-[400px] md:h-[500px] object-cover"
