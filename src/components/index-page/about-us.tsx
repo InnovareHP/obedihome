@@ -150,8 +150,6 @@ export default function AboutUsSection() {
               viewport={{ once: true }}
               className="relative  border-yellow-200/50 border-dotted p-2 backdrop-blur-md"
             >
-
-
               <div className="rounded-[12px] overflow-hidden shadow-md">
                 <img
                   src="/image/obedi-image-2.png"
